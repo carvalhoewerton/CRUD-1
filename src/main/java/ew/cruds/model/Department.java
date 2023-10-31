@@ -4,13 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "tb_dep")
+@Table(name = "tb_department")
 public class Department {
 
     @Id
@@ -18,11 +15,7 @@ public class Department {
     private Long id;
     private String name;
 
-    public Department(){}
-
-    public Department(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    public Department() {
     }
 
     public Long getId() {

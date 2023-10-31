@@ -1,5 +1,4 @@
 package ew.cruds.model;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,14 +18,10 @@ public class User {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name ="department_id")
-    public Department department;
+    @JoinColumn(name = "department_id")
+    private Department department;
 
-    public User(){}
-    public User(Long id, String name, String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+    public User() {
     }
 
     public Long getId() {
@@ -51,5 +46,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

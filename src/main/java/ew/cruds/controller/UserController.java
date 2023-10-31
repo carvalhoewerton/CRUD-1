@@ -5,6 +5,7 @@ import ew.cruds.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -25,9 +26,10 @@ public class UserController {
         return repository.findById(id).get();
     }
 
+    @Transactional
     @PostMapping
     public User insert(@RequestBody User user) {
-        User result = repository.save(user);
-        return result;
-    }
-}
+        return repository.save(user);
+
+    }}
+
